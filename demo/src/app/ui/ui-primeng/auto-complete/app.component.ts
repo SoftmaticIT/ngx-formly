@@ -16,6 +16,9 @@ export class AppComponent {
       key: 'Autocomplete',
       type: 'autocomplete',
       props: {
+        label: 'Autocomplete',
+        placeholder: 'Placeholder',
+        required: true,
         optionLabel: 'label',
         optionValue: 'value',
         options: [
