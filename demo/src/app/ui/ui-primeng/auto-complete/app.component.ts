@@ -18,7 +18,7 @@ export class AppComponent {
       props: {
         optionLabel: 'label',
         optionValue: 'value',
-        fullSuggestions: [
+        options: [
           {
             label: 'Item #1',
             value: '#1',
@@ -32,8 +32,9 @@ export class AppComponent {
             value: '#3',
           },
         ],
+        suggestions: [],
         completeMethod: (field: FormlyFieldConfig, event: AutoCompleteCompleteEvent) => {
-          field.props['suggestions'] = field.props['fullSuggestions'].filter((e: any) => e.label.includes(event.query));
+          field.props['suggestions'] = (field.props['options'] as any[]).filter((e) => e.label.includes(event.query));
         },
       },
     },
