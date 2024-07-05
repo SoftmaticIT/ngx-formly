@@ -2,13 +2,7 @@ import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
 import { OverlayOptions } from 'primeng/api';
-import {
-  CascadeSelectChangeEvent,
-  CascadeSelectShowEvent,
-  CascadeSelectHideEvent,
-  CascadeSelectBeforeShowEvent,
-  CascadeSelectBeforeHideEvent,
-} from 'primeng/cascadeselect';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface CascadeSelectProps extends FormlyFieldProps {
   id?: string;
@@ -44,15 +38,12 @@ interface CascadeSelectProps extends FormlyFieldProps {
   loading?: boolean;
   loadingIcon?: string;
   hideTransitionOptions?: string;
-  onChange?: (field: FormlyFieldConfig, event: CascadeSelectChangeEvent) => void;
-  onGroupChange?: (field: FormlyFieldConfig, event: Event) => void;
-  onShow?: (field: FormlyFieldConfig, event: CascadeSelectShowEvent) => void;
-  onHide?: (field: FormlyFieldConfig, event: CascadeSelectHideEvent) => void;
-  onClear?: (field: FormlyFieldConfig, value: any) => void;
-  onBeforeShow?: (field: FormlyFieldConfig, event: CascadeSelectBeforeShowEvent) => void;
-  onBeforeHide?: (field: FormlyFieldConfig, event: CascadeSelectBeforeHideEvent) => void;
-  onFocus?: (field: FormlyFieldConfig, event: FocusEvent) => void;
-  onBlur?: (field: FormlyFieldConfig, event: FocusEvent) => void;
+  groupChange?: FormlyAttributeEvent;
+  show?: FormlyAttributeEvent;
+  hide?: FormlyAttributeEvent;
+  clear?: FormlyAttributeEvent;
+  beforeShow?: FormlyAttributeEvent;
+  beforeHide?: FormlyAttributeEvent;
 }
 
 export interface FormlyCascadeSelectFieldConfig extends FormlyFieldConfig<CascadeSelectProps> {
