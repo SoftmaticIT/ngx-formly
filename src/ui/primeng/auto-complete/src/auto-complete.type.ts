@@ -2,13 +2,7 @@ import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
 import { OverlayOptions, ScrollerOptions } from 'primeng/api';
-import {
-  AutoCompleteCompleteEvent,
-  AutoCompleteDropdownClickEvent,
-  AutoCompleteLazyLoadEvent,
-  AutoCompleteSelectEvent,
-  AutoCompleteUnselectEvent,
-} from 'primeng/autocomplete';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface AutoCompleteProps extends FormlyFieldProps {
   delay?: number;
@@ -72,17 +66,13 @@ interface AutoCompleteProps extends FormlyFieldProps {
   optionDisabled?: string;
   focusOnHover?: boolean;
   variant?: 'outlined' | 'filled';
-  completeMethod?: (field: FormlyFieldConfig, event: AutoCompleteCompleteEvent) => void;
-  onSelect?: (field: FormlyFieldConfig, event: AutoCompleteSelectEvent) => void;
-  onUnselect?: (field: FormlyFieldConfig, event: AutoCompleteUnselectEvent) => void;
-  onFocus?: (field: FormlyFieldConfig, event: Event) => void;
-  onBlur?: (field: FormlyFieldConfig, event: Event) => void;
-  onDropdownClick?: (field: FormlyFieldConfig, event: AutoCompleteDropdownClickEvent) => void;
-  onClear?: (field: FormlyFieldConfig, event: Event) => void;
-  onKeyUp?: (field: FormlyFieldConfig, event: KeyboardEvent) => void;
-  onShow?: (field: FormlyFieldConfig, event: Event) => void;
-  onHide?: (field: FormlyFieldConfig, event: Event) => void;
-  onLazyLoad?: (field: FormlyFieldConfig, event: AutoCompleteLazyLoadEvent) => void;
+  completeMethod?: FormlyAttributeEvent;
+  select?: FormlyAttributeEvent;
+  unselect?: FormlyAttributeEvent;
+  clear?: FormlyAttributeEvent;
+  show?: FormlyAttributeEvent;
+  hide?: FormlyAttributeEvent;
+  lazyLoad?: FormlyAttributeEvent;
 }
 
 export interface FormlyAutoCompleteFieldConfig extends FormlyFieldConfig<AutoCompleteProps> {

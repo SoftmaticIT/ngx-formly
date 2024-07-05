@@ -1,13 +1,8 @@
 import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
-import {
-  CalendarMonthChangeEvent,
-  CalendarResponsiveOptions,
-  CalendarTypeView,
-  CalendarYearChangeEvent,
-  LocaleSettings,
-} from 'primeng/calendar';
+import { CalendarResponsiveOptions, CalendarTypeView, LocaleSettings } from 'primeng/calendar';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface CalendarProps extends FormlyFieldProps {
   style?: any;
@@ -74,18 +69,16 @@ interface CalendarProps extends FormlyFieldProps {
   locale?: LocaleSettings;
   view?: CalendarTypeView;
   defaultDate?: Date;
-  onFocus?: (field: FormlyFieldConfig, event: Event) => void;
-  onBlur?: (field: FormlyFieldConfig, event: Event) => void;
-  onClose?: (field: FormlyFieldConfig, event: AnimationEvent) => void;
-  onSelect?: (field: FormlyFieldConfig, event: Date) => void;
-  onClear?: (field: FormlyFieldConfig, event: any) => void;
-  onInput?: (field: FormlyFieldConfig, event: any) => void;
-  onTodayClick?: (field: FormlyFieldConfig, event: Date) => void;
-  onClearClick?: (field: FormlyFieldConfig, event: any) => void;
-  onMonthChange?: (field: FormlyFieldConfig, event: CalendarMonthChangeEvent) => void;
-  onYearChange?: (field: FormlyFieldConfig, event: CalendarYearChangeEvent) => void;
-  onClickOutside?: (field: FormlyFieldConfig, event: any) => void;
-  onShow?: (field: FormlyFieldConfig, event: any) => void;
+  close?: FormlyAttributeEvent;
+  select?: FormlyAttributeEvent;
+  clear?: FormlyAttributeEvent;
+  input?: FormlyAttributeEvent;
+  todayClick?: FormlyAttributeEvent;
+  clearClick?: FormlyAttributeEvent;
+  monthChange?: FormlyAttributeEvent;
+  yearChange?: FormlyAttributeEvent;
+  clickOutside?: FormlyAttributeEvent;
+  show?: FormlyAttributeEvent;
 }
 
 export interface FormlyCalendarFieldConfig extends FormlyFieldConfig<CalendarProps> {
