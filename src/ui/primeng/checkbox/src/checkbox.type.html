@@ -1,0 +1,28 @@
+<div class="p-field-checkbox">
+  <p-checkbox
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [value]="props?.value ?? null"
+    [name]="props?.name ?? null"
+    [disabled]="props?.disabled ?? false"
+    [binary]="props?.binary ?? true"
+    [label]="props?.label ?? null"
+    [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+    [ariaLabel]="props?.ariaLabel ?? null"
+    [tabindex]="props?.tabindex ?? null"
+    [inputId]="props?.inputId ?? null"
+    [style]="props?.style ?? null"
+    [styleClass]="props?.styleClass ?? null"
+    [labelStyleClass]="props?.labelStyleClass ?? null"
+    [checkboxIcon]="props?.checkboxIcon ?? null"
+    [readonly]="props?.readonly ?? false"
+    [required]="props?.required ?? false"
+    [autofocus]="props?.autofocus ?? false"
+    [trueValue]="props?.trueValue ?? true"
+    [falseValue]="props?.falseValue ?? false"
+    [variant]="props?.variant ?? 'outlined'"
+    (onFocus)="props?.focus?.(this, $event)"
+    (onBlur)="props?.blur?.(this, $event)"
+    (onChange)="props?.change?.(this, $event)"
+  />
+</div>
