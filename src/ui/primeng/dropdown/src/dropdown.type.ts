@@ -80,9 +80,18 @@ interface DropdownProps extends FormlyFieldProps {
   hide?: FormlyAttributeEvent;
   clear?: FormlyAttributeEvent;
   lazyLoad?: FormlyAttributeEvent;
+  itemTemplate?: TemplateRef<any>;
   selectedItemTemplate?: TemplateRef<any>;
-  itemsTemplate?: TemplateRef<any>;
+  headerTemplate?: TemplateRef<any>;
   filterTemplate?: TemplateRef<any>;
+  footerTemplate?: TemplateRef<any>;
+  emptyFilterTemplate?: TemplateRef<any>;
+  emptyTemplate?: TemplateRef<any>;
+  groupTemplate?: TemplateRef<any>;
+  loaderTemplate?: TemplateRef<any>;
+  dropdownIconTemplate?: TemplateRef<any>;
+  clearIconTemplate?: TemplateRef<any>;
+  filterIconTemplate?: TemplateRef<any>;
 }
 
 export interface FormlyDropdownFieldConfig extends FormlyFieldConfig<DropdownProps> {
@@ -98,6 +107,4 @@ export class FormlyFieldDropdown extends FieldType<FieldTypeConfig<DropdownProps
   constructor(@Inject(LOCALE_ID) public readonly locale: string) {
     super();
   }
-
-  console = console;
 }

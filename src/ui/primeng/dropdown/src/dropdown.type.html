@@ -74,21 +74,51 @@
   (onClear)="props?.clear?.(this, $event)"
   (onLazyLoad)="props?.lazyLoad?.(this, $event)"
 >
-  @if (props?.filterTemplate) {
-    <ng-template pTemplate="filter" let-options="options">
-      <ng-container *ngTemplateOutlet="props.filterTemplate; context: { $implicit: options }"></ng-container>
-    </ng-template>
-  }
+  <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
 
-  @if (props?.selectedItemTemplate) {
-    <ng-template let-item pTemplate="selectedItem">
-      <ng-container *ngTemplateOutlet="props.selectedItemTemplate; context: { $implicit: item }"></ng-container>
-    </ng-template>
-  }
+  <ng-template *ngIf="props?.selectedItemTemplate" let-item pTemplate="selectedItem">
+    <ng-container *ngTemplateOutlet="props.selectedItemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
 
-  @if (props?.itemsTemplate) {
-    <ng-template let-item pTemplate="item">
-      <ng-container *ngTemplateOutlet="props.itemsTemplate; context: { $implicit: item }"></ng-container>
-    </ng-template>
-  }
+  <ng-template *ngIf="props?.headerTemplate">
+    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterTemplate" pTemplate="filter" let-options="options">
+    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { $implicit: options }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyFilterTemplate">
+    <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyTemplate">
+    <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.groupTemplate" let-group pTemplate="group">
+    <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: group }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.loaderTemplate" let-loader pTemplate="loader">
+    <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { $implicit: loader }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.dropdownIconTemplate">
+    <ng-container *ngTemplateOutlet="props.dropdownIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterIconTemplate">
+    <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
+  </ng-template>
 </p-dropdown>

@@ -41,7 +41,7 @@ export class AppComponent implements AfterViewInit {
           optionLabel: 'name',
           optionValue: 'code',
           selectedItemTemplate: this._selectedItem,
-          itemsTemplate: this._items,
+          itemTemplate: this._items,
           filterTemplate: this._filter,
           options: [
             { name: 'Australia', code: 'AU' },
