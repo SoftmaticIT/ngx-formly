@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
+
+<ng-template #selectedItem let-item>
+  <div class="flex align-items-center gap-2">
+    <img
+      src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+      [class]="'flag flag-' + item.code.toLowerCase()"
+      style="width: 18px"
+    />
+    <div>{{ item.name }}</div>
+  </div>
+</ng-template>
+
+<ng-template #items let-item>
+  <div class="flex align-items-center gap-2">
+    <img
+      src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+      [class]="'flag flag-' + item.code.toLowerCase()"
+      style="width: 18px"
+    />
+    <div>{{ item.name }}</div>
+  </div>
+</ng-template>
+
+<ng-template #filter let-options>
+  <div class="flex gap-1">
+    <div class="p-inputgroup" (click)="$event.stopPropagation()">
+      <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+      <input
+        type="text"
+        pInputText
+        placeholder="Filter"
+        [(ngModel)]="filterValue"
+        (keyup)="customFilterFunction($event, options)"
+      />
+    </div>
+    <button pButton icon="pi pi-times" (click)="resetFunction(options)" severity="secondary"></button>
+  </div>
+</ng-template>
