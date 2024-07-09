@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
 import { FormlyAttributeEvent } from 'src/core/src/lib/models';
@@ -27,6 +27,9 @@ interface ChipsProps extends FormlyFieldProps {
   add?: FormlyAttributeEvent;
   remove?: FormlyAttributeEvent;
   clear?: FormlyAttributeEvent;
+  itemTemplate?: TemplateRef<any>;
+  removeTokenIconTemplate?: TemplateRef<any>;
+  clearIconTemplate?: TemplateRef<any>;
 }
 
 export interface FormlyChipsFieldConfig extends FormlyFieldConfig<ChipsProps> {

@@ -30,4 +30,22 @@
   (onBlur)="props?.blur?.(this, $event)"
   (onChipClick)="props?.click?.(this, $event)"
   (onClear)="props?.clear?.(this, $event)"
-/>
+>
+  @if(props?.itemTemplate) {
+    <ng-template let-item pTemplate="item">
+      <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+    </ng-template>
+  }
+  
+  @if(props?.removeTokenIconTemplate) {
+    <ng-template pTemplate="removetokenicon">
+      <ng-container *ngTemplateOutlet="props.removeTokenIconTemplate"></ng-container>
+    </ng-template>
+  }
+
+  @if(props?.clearIconTemplate) {
+    <ng-template pTemplate="clearicon">
+      <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+    </ng-template>
+  }
+</p-chips>
