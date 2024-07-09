@@ -1,0 +1,28 @@
+<div class="flex gap-3">
+  <p-colorPicker
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [style]="props.style ?? null"
+    [styleClass]="props.styleClass ?? null"
+    [inline]="props.inline ?? false"
+    [format]="props.format ?? 'hex'"
+    [appendTo]="props.appendTo ?? 'body'"
+    [disabled]="props.disabled ?? false"
+    [tabindex]="props.tabindex ?? null"
+    [inputId]="props.inputId ?? null"
+    [autoZIndex]="props.autoZIndex ?? true"
+    [showTransitionOptions]="props.showTransitionOptions"
+    [hideTransitionOptions]="props.hideTransitionOptions"
+    [autofocus]="props.autofocus"
+    (onShow)="onShow($event)"
+    (onHide)="onHide($event)"
+  />
+  <input
+    *ngIf="props.showInput"
+    [style]="props.inputStyle"
+    pInputText
+    (ngModelChange)="handleColorChange($event)"
+    (blur)="handleBlur($event)"
+    [(ngModel)]="formControl.value"
+  />
+</div>
