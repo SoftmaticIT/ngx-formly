@@ -82,7 +82,7 @@
     <ng-container *ngTemplateOutlet="props.selectedItemTemplate; context: { $implicit: item }"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.headerTemplate">
+  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
     <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
   </ng-template>
 
@@ -90,15 +90,15 @@
     <ng-container *ngTemplateOutlet="props.filterTemplate; context: { $implicit: options }"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.footerTemplate">
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
     <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.emptyFilterTemplate">
+  <ng-template *ngIf="props?.emptyFilterTemplate" pTemplate="emptyfilter">
     <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.emptyTemplate">
+  <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
     <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
   </ng-template>
 
@@ -110,15 +110,15 @@
     <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { $implicit: loader }"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.dropdownIconTemplate">
+  <ng-template *ngIf="props?.dropdownIconTemplate" pTemplate="dropdownicon">
     <ng-container *ngTemplateOutlet="props.dropdownIconTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.clearIconTemplate">
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
     <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.filterIconTemplate">
+  <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
     <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
   </ng-template>
 </p-dropdown>
