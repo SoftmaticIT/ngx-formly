@@ -47,4 +47,28 @@
   (onBeforeHide)="props?.beforeHide?.(this, $event)"
   (onFocus)="props?.focus?.(this, $event)"
   (onBlur)="props?.blur?.(this, $event)"
-/>
+>
+  <ng-template *ngIf="props?.valueTemplate" let-value pTemplate="value">
+    <ng-container *ngTemplateOutlet="props.valueTemplate; context: { $implicit: value}"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.optionTemplate" let-option pTemplate="option">
+    <ng-container *ngTemplateOutlet="props.optionTemplate; context: { $implicit: option }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.triggerIconTemplate" pTemplate="triggericon">
+    <ng-container *ngTemplateOutlet="props.triggerIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.optionGroupIconTemplate" pTemplate="optiongroupicon">
+    <ng-container *ngTemplateOutlet="props.optionGroupIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.loadingIconTemplate" pTemplate="loadingicon">
+    <ng-container *ngTemplateOutlet="props.loadingIconTemplate"></ng-container>
+  </ng-template>
+</p-cascadeSelect>

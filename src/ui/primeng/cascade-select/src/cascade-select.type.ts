@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
 import { OverlayOptions } from 'primeng/api';
@@ -44,6 +44,12 @@ interface CascadeSelectProps extends FormlyFieldProps {
   clear?: FormlyAttributeEvent;
   beforeShow?: FormlyAttributeEvent;
   beforeHide?: FormlyAttributeEvent;
+  valueTemplate?: TemplateRef<any>;
+  optionTemplate?: TemplateRef<any>;
+  triggerIconTemplate?: TemplateRef<any>;
+  clearIconTemplate?: TemplateRef<any>;
+  optionGroupIconTemplate?: TemplateRef<any>;
+  loadingIconTemplate?: TemplateRef<any>;
 }
 
 export interface FormlyCascadeSelectFieldConfig extends FormlyFieldConfig<CascadeSelectProps> {
