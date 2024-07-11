@@ -1,0 +1,13 @@
+<textarea
+  pInputTextarea
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [autoResize]="props?.autoResize ?? false"
+  [variant]="props?.variant ?? 'outlined'"
+  [rows]="props?.rows ?? null"
+  [cols]="props?.cols ?? null"
+  [required]="props?.required ?? false"
+  [readOnly]="props?.readonly ?? false"
+  [disabled]="props?.disabled ?? false"
+  (onResize)="props?.resize?.(this, $event)"
+></textarea>
