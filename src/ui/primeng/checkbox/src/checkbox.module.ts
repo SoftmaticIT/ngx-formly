@@ -4,7 +4,6 @@ import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormlyFormFieldModule } from '@ngx-formly/primeng/form-field';
-
 import { FormlyFieldCheckbox } from './checkbox.type';
 
 @NgModule({

@@ -24,5 +24,9 @@
     (onFocus)="props?.focus?.(this, $event)"
     (onBlur)="props?.blur?.(this, $event)"
     (onChange)="props?.change?.(this, $event)"
-  />
+  >
+    <ng-template *ngIf="props?.iconTemplate" pTemplate="icon">
+      <ng-container *ngTemplateOutlet="props.iconTemplate"></ng-container>
+    </ng-template>
+  </p-checkbox>
 </div>
