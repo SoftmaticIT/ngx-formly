@@ -1,0 +1,13 @@
+<input
+  type="text"
+  pInputText
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [variant]="props?.variant ?? 'outlined'"
+  [id]="props?.id ?? null"
+  [minlength]="props?.minLength ?? null"
+  [maxlength]="props?.maxLength ?? null"
+  [required]="props?.required ?? false"
+  [disabled]="props?.disabled ?? false"
+  [readOnly]="props?.readonly ?? false"
+/>
