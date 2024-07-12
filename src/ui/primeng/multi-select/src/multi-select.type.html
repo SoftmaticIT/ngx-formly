@@ -1,0 +1,162 @@
+<p-multiSelect
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [id]="props?.id ?? null"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [style]="props?.style ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [panelStyle]="props?.panelStyle ?? null"
+  [panelStyleClass]="props?.panelStyleClass ?? null"
+  [inputId]="props?.inputId ?? null"
+  [disabled]="props?.disabled ?? false"
+  [readonly]="props?.readonly ?? false"
+  [group]="props?.group ?? false"
+  [filter]="props?.filter ?? true"
+  [filterPlaceHolder]="props?.filterPlaceHolder ?? null"
+  [filterLocale]="props?.filterLocale ?? locale"
+  [overlayVisible]="props?.overlayVisible ?? false"
+  [tabindex]="props?.tabindex ?? 0"
+  [variant]="props?.variant ?? 'outlined'"
+  [appendTo]="props?.appendTo ?? null"
+  [dataKey]="props?.dataKey ?? null"
+  [name]="props?.name ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [displaySelectedLabel]="props?.displaySelectedLabel ?? null"
+  [maxSelectedLabels]="props?.maxSelectedLabels ?? null"
+  [selectionLimit]="props?.selectionLimit ?? null"
+  [selectedItemsLabel]="props?.selectedItemsLabel ?? null"
+  [showToggleAll]="props?.showToggleAll ?? true"
+  [emptyFilterMessage]="props?.emptyFilterMessage ?? null"
+  [emptyMessage]="props?.emptyMessage ?? null"
+  [resetFilterOnHide]="props?.resetFilterOnHide ?? false"
+  [dropdownIcon]="props?.dropdownIcon ?? null"
+  [optionLabel]="props?.optionLabel ?? null"
+  [optionValue]="props?.optionValue ?? null"
+  [optionDisabled]="props?.optionDisabled ?? null"
+  [optionGroupLabel]="props?.optionGroupLabel ?? 'label'"
+  [optionGroupChildren]="props?.optionGroupChildren ?? 'items'"
+  [showHeader]="props?.showHeader ?? true"
+  [filterBy]="props?.filterBy ?? null"
+  [scrollHeight]="props?.scrollHeight ?? '200px'"
+  [lazy]="props?.lazy ?? false"
+  [virtualScroll]="props?.virtualScroll ?? false"
+  [loading]="props?.loading ?? false"
+  [virtualScrollItemSize]="props?.virtualScrollItemSize ?? null"
+  [loadingIcon]="props?.loadingIcon ?? null"
+  [virtualScrollOptions]="props?.virtualScrollOptions ?? null"
+  [overlayOptions]="props?.overlayOptions ?? null"
+  [ariaFilterLabel]="props?.ariaFilterLabel ?? null"
+  [filterMatchMode]="props?.filterMatchMode ?? 'contains'"
+  [tooltip]="props?.tooltip ?? null"
+  [tooltipPosition]="props?.tooltipPosition ?? 'right'"
+  [tooltipPositionStyle]="props?.tooltipPositionStyle ?? 'absolute'"
+  [tooltipStyleClass]="props?.tooltipStyleClass ?? null"
+  [autofocusFilter]="props?.autofocusFilter ?? true"
+  [display]="props?.display ?? 'comma'"
+  [autocomplete]="props?.autocomplete ?? 'off'"
+  [showClear]="props?.showClear ?? false"
+  [autofocus]="props?.autofocus ?? false"
+  [autoZIndex]="props?.autoZIndex ?? null"
+  [baseZIndex]="props?.baseZIndex ?? null"
+  [showTransitionOptions]="props?.showTransitionOptions ?? null"
+  [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
+  [defaultLabel]="props?.defaultLabel ?? null"
+  [placeholder]="props?.placeholder ?? null"
+  [options]="$any(props?.options) ?? null"
+  [filterValue]="props?.filterValue ?? null"
+  [itemSize]="props?.itemSize ?? null"
+  [selectAll]="props?.selectAll ?? null"
+  [focusOnHover]="props?.focusOnHover ?? false"
+  [filterFields]="props?.filterFields ?? null"
+  [selectOnFocus]="props?.selectOnFocus ?? false"
+  [autoOptionFocus]="props?.autoOptionFocus ?? true"
+  [required]="props?.required ?? false"
+  (onChange)="props?.change?.(this, $event)"
+  (onFilter)="props?.onFilter?.(this, $event)"
+  (onFocus)="props?.focus?.(this, $event)"
+  (onBlur)="props?.blur?.(this, $event)"
+  (onClick)="props?.click?.(this, $event)"
+  (onClear)="props?.clear?.(this, $event)"
+  (onPanelShow)="props?.panelShow?.(this, $event)"
+  (onPanelHide)="props?.panelHide?.(this, $event)"
+  (onLazyLoad)="props?.lazyLoad?.(this, $event)"
+  (onRemove)="props?.remove?.(this, $event)"
+  (onSelectAllChange)="props?.selectAllChange?.(this, $event)"
+>
+  <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.selectedItemsTemplate" let-item pTemplate="selectedItems">
+    <ng-container
+      *ngTemplateOutlet="props.selectedItemsTemplate; context: { $implicit: item, removeChip: undefined }"
+    ></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
+    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterTemplate" let-filter pTemplate="filter">
+    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: filter }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyFilterTemplate" pTemplate="emptyfilter">
+    <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
+    <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.groupTemplate" let-item pTemplate="group">
+    <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.loaderTemplate" let-options pTemplate="loader">
+    <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { options: options }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.dropdownIconTemplate" pTemplate="dropdownicon">
+    <ng-container *ngTemplateOutlet="props.dropdownIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
+    <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.checkIconTemplate" pTemplate="checkicon">
+    <ng-container *ngTemplateOutlet="props.checkIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template
+    *ngIf="props?.headerCheckboxIconTemplate"
+    let-selected
+    let-partial="partialSelected"
+    pTemplate="headercheckboxicon"
+  >
+    <ng-container
+      *ngTemplateOutlet="props.headerCheckboxIconTemplate; context: { $implicit: selected, partialSelected: partial }"
+    ></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.itemCheckboxIconTemplate" let-selected pTemplate="itemcheckboxicon">
+    <ng-container *ngTemplateOutlet="props.itemCheckboxIconTemplate; context: { $implicit: selected }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.closeIconTemplate" pTemplate="closeicon">
+    <ng-container *ngTemplateOutlet="props.closeIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.removeTokenIconTemplate" pTemplate="removetokenicon">
+    <ng-container *ngTemplateOutlet="props.removeTokenIconTemplate"></ng-container>
+  </ng-template>
+</p-multiSelect>
