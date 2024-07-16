@@ -11,12 +11,14 @@ import { TextareaExampleConfig } from '../common/textarea';
 import { SelectExampleConfig } from './select';
 import { DatepickerAppModule, DatepickerExampleConfig } from './datepicker';
 import { AutoCompleteAppModule, AutoCompleteExampleConfig } from './auto-complete';
+import { PasswordAppModule, PasswordExampleConfig } from './password';
 
 @NgModule({
   imports: [
     CommonModule,
     FormlyPrimeNGModule,
     DatepickerAppModule,
+    PasswordAppModule,
     AutoCompleteAppModule,
     RouterModule.forChild([
       {
@@ -36,6 +38,7 @@ import { AutoCompleteAppModule, AutoCompleteExampleConfig } from './auto-complet
                 SelectExampleConfig,
                 DatepickerExampleConfig,
                 AutoCompleteExampleConfig,
+                PasswordExampleConfig,
               ],
             },
           },
