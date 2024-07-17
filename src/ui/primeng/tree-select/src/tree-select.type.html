@@ -1,0 +1,97 @@
+<p-treeSelect
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [inputId]="props?.inputId ?? null"
+  [scrollHeight]="props?.scrollHeight ?? '400px'"
+  [disabled]="props?.disabled ?? false"
+  [metaKeySelection]="props?.metaKeySelection ?? false"
+  [variant]="props?.variant ?? 'outlined'"
+  [display]="props?.display ?? 'comma'"
+  [selectionMode]="props?.selectionMode ?? 'single'"
+  [tabindex]="(props?.tabindex)?.toString() ?? '0'"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [placeholder]="props?.placeholder ?? null"
+  [panelClass]="props?.panelClass ?? null"
+  [panelStyle]="props?.panelStyle ?? null"
+  [panelStyleClass]="props?.panelStyleClass ?? null"
+  [containerStyle]="props?.containerStyle ?? null"
+  [containerStyleClass]="props?.containerStyleClass ?? null"
+  [labelStyle]="props?.labelStyle ?? null"
+  [labelStyleClass]="props?.labelStyleClass ?? null"
+  [overlayOptions]="props?.overlayOptions ?? null"
+  [emptyMessage]="props?.emptyMessage ?? null"
+  [appendTo]="props?.appendTo ?? null"
+  [filter]="props?.filter ?? false"
+  [filterBy]="props?.filterBy ?? 'label'"
+  [filterMode]="props?.filterMode ?? 'lenient'"
+  [filterPlaceholder]="props?.filterPlaceholder ?? null"
+  [filterLocale]="props?.filterLocale ?? null"
+  [filterInputAutoFocus]="props?.filterInputAutoFocus ?? true"
+  [propagateSelectionDown]="props?.propagateSelectionDown ?? true"
+  [propagateSelectionUp]="props?.propagateSelectionUp ?? true"
+  [showClear]="props?.showClear ?? false"
+  [resetFilterOnHide]="props?.resetFilterOnHide ?? true"
+  [virtualScroll]="props?.virtualScroll ?? false"
+  [virtualScrollItemSize]="props?.virtualScrollItemSize ?? null"
+  [virtualScrollOptions]="props?.virtualScrollOptions ?? null"
+  [autofocus]="props?.autofocus ?? false"
+  [options]="props?.options ?? null"
+  [showTransitionOptions]="props?.showTransitionOptions ?? null"
+  [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
+  [loading]="props?.loading ?? false"
+  (onNodeExpand)="props?.nodeExpand?.(this, $event)"
+  (onNodeCollapse)="props?.nodeCollapse?.(this, $event)"
+  (onShow)="props?.show?.(this, $event)"
+  (onHide)="props?.hide?.(this, $event)"
+  (onClear)="props?.clear?.(this, $event)"
+  (onFilter)="props?.onFilter?.(this, $event)"
+  (onFocus)="props?.focus?.(this, $event)"
+  (onBlur)="props?.blur?.(this, $event)"
+  (onNodeUnselect)="props?.nodeUnselect?.(this, $event)"
+  (onNodeSelect)="props?.nodeSelect?.(this, $event)"
+>
+  <ng-template *ngIf="props?.valueTemplate" let-item pTemplate="value">
+    <ng-container *ngTemplateOutlet="props.valueTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.headerTemplate" let-item pTemplate="header">
+    <ng-container *ngTemplateOutlet="props.headerTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
+    <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.triggerIconTemplate" pTemplate="triggericon">
+    <ng-container *ngTemplateOutlet="props.triggerIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
+    <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.closeIconTemplate" pTemplate="closeicon">
+    <ng-container *ngTemplateOutlet="props.closeIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.itemTogglerIconTemplate" let-item pTemplate="itemtogglericon">
+    <ng-container *ngTemplateOutlet="props.itemTogglerIconTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.itemCheckboxIconTemplate" pTemplate="itemcheckboxicon">
+    <ng-container *ngTemplateOutlet="props.itemCheckboxIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.itemLoadingIconTemplate" pTemplate="itemloadingicon">
+    <ng-container *ngTemplateOutlet="props.itemLoadingIconTemplate"></ng-container>
+  </ng-template>
+</p-treeSelect>
