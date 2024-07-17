@@ -1,0 +1,37 @@
+<p-inputMask
+  [type]="props.type ?? 'text'"
+  [slotChar]="props.slotChar ?? '_'"
+  [autoClear]="props.autoClear ?? true"
+  [showClear]="props.showClear ?? false"
+  [style]="props?.style"
+  [inputId]="props?.inputId"
+  [styleClass]="props?.styleClass"
+  [placeholder]="props?.placeholder"
+  [size]="props?.size"
+  [maxlength]="props?.maxlength"
+  [title]="props?.title"
+  [variant]="props.variant ?? 'outlined'"
+  [ariaLabel]="props?.ariaLabel"
+  [ariaLabelledBy]="props?.ariaLabelledBy"
+  [ariaRequired]="props?.ariaRequired"
+  [disabled]="props.disabled ?? false"
+  [readonly]="props.readonly ?? false"
+  [unmask]="props.unmask ?? false"
+  [name]="props?.name"
+  [required]="props.required ?? false"
+  [characterPattern]="props.characterPattern ?? '[A-Za-z]'"
+  [autofocus]="props.autofocus ?? false"
+  [autocomplete]="props?.autocomplete"
+  [keepBuffer]="props.keepBuffer ?? false"
+  [mask]="props?.mask"
+  (onComplete)="props.onComplete ? props.onComplete($event) : null"
+  (onFocus)="props.onFocus ? props.onFocus($event) : null"
+  (onBlur)="props.onBlur ? props.onBlur($event) : null"
+  (onInput)="props.onInput ? props.onInput($event) : null"
+  (onKeydown)="props.onKeydown ? props.onKeydown($event) : null"
+  (onClear)="props.onClear ? props.onClear($event) : null"
+>
+  <ng-template *ngIf="props?.clearIcon" pTemplate="clearicon">
+    <span [class]="'pi ' + props.clearIcon"></span>
+  </ng-template>
+</p-inputMask>
