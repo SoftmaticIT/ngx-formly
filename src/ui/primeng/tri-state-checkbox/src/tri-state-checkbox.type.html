@@ -1,0 +1,29 @@
+<div class="p-field-checkbox">
+  <p-triStateCheckbox
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [disabled]="props?.disabled ?? false"
+    [name]="props?.name ?? null"
+    [ariaLabel]="props?.ariaLabel ?? null"
+    [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+    [variant]="props?.variant ?? 'outlined'"
+    [tabindex]="props?.tabindex ?? null"
+    [inputId]="props?.inputId ?? null"
+    [style]="props?.style ?? null"
+    [styleClass]="props?.styleClass ?? null"
+    [label]="props?.label ?? null"
+    [readonly]="props?.readonly ?? false"
+    [checkboxTrueIcon]="props?.checkboxTrueIcon ?? null"
+    [checkboxFalseIcon]="props?.checkboxFalseIcon ?? null"
+    [autofocus]="props?.autofocus ?? false"
+    [required]="props?.required ?? false"
+  >
+    <ng-template *ngIf="props?.checkIconTemplate" pTemplate="checkicon">
+      <ng-container *ngTemplateOutlet="props.checkIconTemplate"></ng-container>
+    </ng-template>
+
+    <ng-template *ngIf="props?.uncheckIconTemplate" pTemplate="uncheckicon">
+      <ng-container *ngTemplateOutlet="props.uncheckIconTemplate"></ng-container>
+    </ng-template>
+  </p-triStateCheckbox>
+</div>
