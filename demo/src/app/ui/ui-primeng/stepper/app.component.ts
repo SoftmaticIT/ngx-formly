@@ -51,6 +51,14 @@ export class AppComponent {
                 required: true,
               },
             },
+            {
+              key: 'city',
+              type: 'input',
+              props: {
+                label: 'City',
+                required: true,
+              },
+            },
           ],
         },
         {

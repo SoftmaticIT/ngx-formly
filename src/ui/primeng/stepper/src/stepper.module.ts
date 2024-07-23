@@ -20,7 +20,6 @@ import { ButtonModule } from 'primeng/button';
         {
           name: 'stepper',
           component: FormlyFieldStepper,
-          // wrappers: ['form-field'],
         },
       ],
     }),
