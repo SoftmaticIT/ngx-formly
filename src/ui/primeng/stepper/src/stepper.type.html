@@ -1,0 +1,39 @@
+<p-stepper
+  (activeStepChange)="props?.activeStepChange?.(this, $event)"
+  [activeStep]="props?.activeStep??0"
+  [orientation]="props?.orientation ?? 'horizontal'"
+  [linear]="props?.linear ?? false"
+>
+  <p-stepperPanel
+    [header]="step?.props?.label"
+    *ngFor="let step of field?.fieldGroup; let index = index; let last = last"
+  >
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+      <div class="flex flex-column h-12rem">
+        <div
+          class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+        >
+          <formly-field [field]="step" />
+        </div>
+      </div>
+      <div class="flex pt-4 justify-content-between">
+        <p-button
+          *ngIf="index !== 0"
+          [label]="props?.backLabel ?? 'Back'"
+          icon="pi pi-arrow-left"
+          (onClick)="prevCallback.emit()"
+        />
+        <span *ngIf="index === 0"></span>
+        <p-button
+          [disabled]="!isValid(step)"
+          *ngIf="!last"
+          [label]="props?.nextLabel ?? 'Next'"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          (onClick)="nextCallback.emit()"
+        />
+        <p-button [disabled]="!form.valid" *ngIf="last" [label]="props?.submitLabel ?? 'Submit'" type="submit" />
+      </div>
+    </ng-template>
+  </p-stepperPanel>
+</p-stepper>
