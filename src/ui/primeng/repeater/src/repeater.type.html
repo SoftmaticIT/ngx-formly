@@ -1,0 +1,23 @@
+<p-panel styleClass="mb-4">
+  <ng-template pTemplate="header">
+    <div class="w-full flex align-items-center justify-content-between">
+      <div class="flex flex-column">
+        <span *ngIf="props?.label" class="font-bold">{{ props.label }}</span>
+        <small *ngIf="props?.description">{{ props.description }}</small>
+      </div>
+      <p-button
+        [rounded]="true"
+        [text]="true"
+        [label]="props?.addLabel ?? 'Add'"
+        iconPos="right"
+        icon="pi pi-plus"
+        severity="secondary"
+        (onClick)="add()"
+      />
+    </div>
+  </ng-template>
+  <div *ngFor="let field of field?.fieldGroup; let i = index" class="flex gap-3 align-items-center mt-4 w-full">
+    <formly-field [field]="field" class="w-full" />
+    <p-button [rounded]="true" [text]="true" icon="pi pi-trash" severity="danger" (onClick)="remove(i)" />
+  </div>
+</p-panel>
