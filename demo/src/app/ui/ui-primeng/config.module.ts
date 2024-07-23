@@ -11,6 +11,7 @@ import { TextareaExampleConfig } from '../common/textarea';
 import { SelectExampleConfig } from './select';
 import { DatepickerAppModule, DatepickerExampleConfig } from './datepicker';
 import { AutoCompleteAppModule, AutoCompleteExampleConfig } from './auto-complete';
+import { TabViewAppModule, TabViewExampleConfig } from './tab-view';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { AutoCompleteAppModule, AutoCompleteExampleConfig } from './auto-complet
     FormlyPrimeNGModule,
     DatepickerAppModule,
     AutoCompleteAppModule,
+    TabViewAppModule,
     RouterModule.forChild([
       {
         path: '',
@@ -36,6 +38,7 @@ import { AutoCompleteAppModule, AutoCompleteExampleConfig } from './auto-complet
                 SelectExampleConfig,
                 DatepickerExampleConfig,
                 AutoCompleteExampleConfig,
+                TabViewExampleConfig,
               ],
             },
           },

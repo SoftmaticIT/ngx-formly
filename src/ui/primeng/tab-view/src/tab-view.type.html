@@ -1,0 +1,19 @@
+<p-tabView
+  [style]="props?.style ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [controlClose]="props?.controlClose ?? false"
+  [scrollable]="props?.scrollable ?? false"
+  [activeIndex]="props?.activeIndex ?? null"
+  [selectOnFocus]="props?.selectOnFocus ?? false"
+  [nextButtonAriaLabel]="props?.nextButtonAriaLabel ?? null"
+  [prevButtonAriaLabel]="props?.prevButtonAriaLabel ?? null"
+  [autoHideButtons]="props?.autoHideButtons ?? true"
+  [tabindex]="props?.tabindex ?? 0"
+  (onChange)="props?.change?.(this, $event)"
+  (onClose)="props?.close?.(this, $event)"
+  (activeIndexChange)="props?.activeIndexChange?.(this, $event)"
+>
+  <p-tabPanel *ngFor="let tab of field?.fieldGroup;" [header]="tab?.props?.label">
+    <formly-field [field]="tab" />
+  </p-tabPanel>
+</p-tabView>
