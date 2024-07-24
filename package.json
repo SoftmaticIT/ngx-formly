@@ -81,6 +81,7 @@
     "ag-grid-angular": "^32.0.0",
     "ag-grid-community": "^32.0.0",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.3",
     "core-js": "^3.37.1",
     "express": "^4.19.2",
     "ng-zorro-antd": "^17.4.1",
