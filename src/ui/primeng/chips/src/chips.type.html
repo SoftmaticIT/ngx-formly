@@ -1,0 +1,45 @@
+<p-chips
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [style]="props?.style ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [disabled]="props?.disabled ?? false"
+  [field]="props?.field ?? null"
+  [placeholder]="props?.placeholder ?? null"
+  [max]="props?.max ?? null"
+  [maxLength]="props?.maxLength ?? null"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [tabindex]="props?.tabindex ?? null"
+  [inputId]="props?.inputId ?? null"
+  [allowDuplicate]="props?.allowDuplicate ?? true"
+  [caseSensitiveDuplication]="props?.caseSensitiveDuplication ?? true"
+  [inputStyle]="props?.inputStyle ?? null"
+  [inputStyleClass]="props?.inputStyleClass ?? null"
+  [addOnTab]="props?.addOnTab ?? false"
+  [addOnBlur]="props?.addOnBlur ?? false"
+  [separator]="props?.separator ?? null"
+  [showClear]="props?.showClear ?? false"
+  [autofocus]="props?.autofocus ?? false"
+  [variant]="props?.variant ?? 'outlined'"
+  [required]="props?.required ?? false"
+  [disabled]="props?.disabled ?? false"
+  (onAdd)="props?.onAdd?.(this, $event)"
+  (onRemove)="props?.onRemove?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onChipClick)="props?.onChipClick?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+>
+  <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.removeTokenIconTemplate" pTemplate="removetokenicon">
+    <ng-container *ngTemplateOutlet="props.removeTokenIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+</p-chips>
