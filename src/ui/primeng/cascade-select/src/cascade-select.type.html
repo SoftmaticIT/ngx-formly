@@ -38,18 +38,20 @@
   [loading]="props?.loading ?? false"
   [loadingIcon]="props?.loadingIcon ?? null"
   [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
-  (onChange)="props?.change?.(this, $event)"
-  (onGroupChange)="props?.groupChange?.(this, $event)"
-  (onShow)="props?.show?.(this, $event)"
-  (onHide)="props?.hide?.(this, $event)"
-  (onClear)="props?.clear?.(this, $event)"
-  (onBeforeShow)="props?.beforeShow?.(this, $event)"
-  (onBeforeHide)="props?.beforeHide?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
+  (onGroupChange)="props?.onGroupChange?.(this, $event)"
+  (onShow)="props?.onShow?.(this, $event)"
+  (onHide)="props?.onHide?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+  (onBeforeShow)="props?.onBeforeShow?.(this, $event)"
+  (onBeforeHide)="props?.onBeforeHide?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
 >
-  <ng-template *ngIf="props?.valueTemplate" let-value pTemplate="value">
-    <ng-container *ngTemplateOutlet="props.valueTemplate; context: { $implicit: value}"></ng-container>
+  <ng-template *ngIf="props?.valueTemplate" let-placeholder="placeholder" let-value pTemplate="value">
+    <ng-container
+      *ngTemplateOutlet="props.valueTemplate; context: { $implicit: value, placeholder: placeholder }"
+    ></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.optionTemplate" let-option pTemplate="option">
