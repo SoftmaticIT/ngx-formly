@@ -1,8 +1,29 @@
-import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
-interface CheckboxProps extends FormlyFieldProps {}
+interface CheckboxProps extends FormlyFieldProps {
+  value?: any;
+  name?: string;
+  binary?: boolean;
+  ariaLabelledBy?: string;
+  ariaLabel?: string;
+  tabindex?: number;
+  inputId?: string;
+  style?: object;
+  styleClass?: string;
+  labelStyleClass?: string;
+  checkboxIcon?: string;
+  autofocus?: boolean;
+  trueValue?: any;
+  falseValue?: any;
+  variant?: 'outlined' | 'filled';
+  onChange?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
+  iconTemplate?: TemplateRef<any>;
+}
 
 export interface FormlyCheckboxFieldConfig extends FormlyFieldConfig<CheckboxProps> {
   type: 'checkbox' | Type<FormlyFieldCheckbox>;
@@ -10,18 +31,7 @@ export interface FormlyCheckboxFieldConfig extends FormlyFieldConfig<CheckboxPro
 
 @Component({
   selector: 'formly-field-primeng-checkbox',
-  template: `
-    <div class="p-field-checkbox">
-      <p-checkbox
-        [binary]="true"
-        [label]="props.label"
-        [formControl]="formControl"
-        [formlyAttributes]="field"
-        (onChange)="props.change && props.change(field, $event)"
-      >
-      </p-checkbox>
-    </div>
-  `,
+  templateUrl: './checkbox.type.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormlyFieldCheckbox extends FieldType<FieldTypeConfig<CheckboxProps>> {

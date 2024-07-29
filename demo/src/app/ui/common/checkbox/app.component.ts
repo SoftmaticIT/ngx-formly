@@ -7,10 +7,10 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  form = new FormGroup({});
   model: any = {};
-  options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[] = [
+  readonly form = new FormGroup({});
+  readonly options: FormlyFormOptions = {};
+  readonly fields: FormlyFieldConfig[] = [
     {
       key: 'Checkbox',
       type: 'checkbox',
