@@ -19,5 +19,5 @@
   [disabled]="props?.disabled ?? false"
   [showValue]="props?.showValue ?? true"
   [readonly]="props?.readonly ?? false"
-  (onChange)="props?.change?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
 />

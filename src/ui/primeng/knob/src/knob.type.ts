@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface KnobProps extends FormlyFieldProps {
   styleClass?: string;
@@ -19,6 +20,7 @@ interface KnobProps extends FormlyFieldProps {
   max?: number;
   strokeWidth?: number;
   showValue?: boolean;
+  onChange?: FormlyAttributeEvent;
 }
 
 export interface FormlyKnobFieldConfig extends FormlyFieldConfig<KnobProps> {
