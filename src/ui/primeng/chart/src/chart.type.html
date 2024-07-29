@@ -8,6 +8,5 @@
   [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
   [data]="props?.data ?? null"
   [options]="props?.options ?? null"
-  (onDataSelect)="props?.dataSelect?.(this, $event)"
+  (onDataSelect)="props?.onDataSelect?.(this, $event)"
 />
-            

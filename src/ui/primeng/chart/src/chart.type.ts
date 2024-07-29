@@ -13,7 +13,7 @@ interface ChartProps extends FormlyFieldProps {
   ariaLabelledBy?: string;
   data?: any;
   chartOptions?: any;
-  dataSelect?: FormlyAttributeEvent;
+  onDataSelect?: FormlyAttributeEvent;
 }
 
 export interface FormlyChartFieldConfig extends FormlyFieldConfig<ChartProps> {
