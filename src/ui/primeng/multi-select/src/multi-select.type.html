@@ -71,34 +71,32 @@
   [selectOnFocus]="props?.selectOnFocus ?? false"
   [autoOptionFocus]="props?.autoOptionFocus ?? true"
   [required]="props?.required ?? false"
-  (onChange)="props?.change?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
   (onFilter)="props?.onFilter?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
-  (onClick)="props?.click?.(this, $event)"
-  (onClear)="props?.clear?.(this, $event)"
-  (onPanelShow)="props?.panelShow?.(this, $event)"
-  (onPanelHide)="props?.panelHide?.(this, $event)"
-  (onLazyLoad)="props?.lazyLoad?.(this, $event)"
-  (onRemove)="props?.remove?.(this, $event)"
-  (onSelectAllChange)="props?.selectAllChange?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onClick)="props?.onClick?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+  (onPanelShow)="props?.onPanelShow?.(this, $event)"
+  (onPanelHide)="props?.onPanelHide?.(this, $event)"
+  (onLazyLoad)="props?.onLazyLoad?.(this, $event)"
+  (onRemove)="props?.onRemove?.(this, $event)"
+  (onSelectAllChange)="props?.onSelectAllChange?.(this, $event)"
 >
   <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
     <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.selectedItemsTemplate" let-item pTemplate="selectedItems">
-    <ng-container
-      *ngTemplateOutlet="props.selectedItemsTemplate; context: { $implicit: item, removeChip: undefined }"
-    ></ng-container>
+    <ng-container *ngTemplateOutlet="props.selectedItemsTemplate; context: { $implicit: item }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
     <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.filterTemplate" let-filter pTemplate="filter">
-    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: filter }"></ng-container>
+  <ng-template *ngIf="props?.filterTemplate" let-options="options" pTemplate="filter">
+    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: options }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
@@ -117,7 +115,7 @@
     <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: item }"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.loaderTemplate" let-options pTemplate="loader">
+  <ng-template *ngIf="props?.loaderTemplate" let-options="options" pTemplate="loader">
     <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { options: options }"></ng-container>
   </ng-template>
 
