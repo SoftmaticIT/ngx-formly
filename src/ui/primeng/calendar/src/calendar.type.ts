@@ -69,16 +69,18 @@ interface CalendarProps extends FormlyFieldProps {
   locale?: LocaleSettings;
   view?: CalendarTypeView;
   defaultDate?: Date;
-  close?: FormlyAttributeEvent;
-  select?: FormlyAttributeEvent;
-  clear?: FormlyAttributeEvent;
-  input?: FormlyAttributeEvent;
-  todayClick?: FormlyAttributeEvent;
-  clearClick?: FormlyAttributeEvent;
-  monthChange?: FormlyAttributeEvent;
-  yearChange?: FormlyAttributeEvent;
-  clickOutside?: FormlyAttributeEvent;
-  show?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
+  onClose?: FormlyAttributeEvent;
+  onSelect?: FormlyAttributeEvent;
+  onClear?: FormlyAttributeEvent;
+  onInput?: FormlyAttributeEvent;
+  onTodayClick?: FormlyAttributeEvent;
+  onClearClick?: FormlyAttributeEvent;
+  onMonthChange?: FormlyAttributeEvent;
+  onYearChange?: FormlyAttributeEvent;
+  onClickOutside?: FormlyAttributeEvent;
+  onShow?: FormlyAttributeEvent;
 }
 
 export interface FormlyCalendarFieldConfig extends FormlyFieldConfig<CalendarProps> {
