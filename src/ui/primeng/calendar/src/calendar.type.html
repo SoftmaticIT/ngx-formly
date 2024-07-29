@@ -81,4 +81,52 @@
   (onYearChange)="props?.onYearChange?.(this, $event)"
   (onClickOutside)="props?.onClickOutside?.(this, $event)"
   (onShow)="props?.onShow?.(this, $event)"
-/>
+>
+  <ng-template *ngIf="props?.dateTemplate" let-value pTemplate="date">
+    <ng-container *ngTemplateOutlet="props.dateTemplate; context: { $implicit: value }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.decadeTemplate" let-value pTemplate="decade">
+    <ng-container *ngTemplateOutlet="props.decadeTemplate; context: { $implicit: value }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.disabledDateTemplate" pTemplate="disabledDate">
+    <ng-container *ngTemplateOutlet="props.disabledDateTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
+    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.inputIconTemplate" let-clickCallBack="clickCallBack" pTemplate="inputIcon">
+    <ng-container *ngTemplateOutlet="props.inputIconTemplate; context: { clickCallBack: clickCallBack }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.previousIconTemplate" pTemplate="previousicon">
+    <ng-container *ngTemplateOutlet="props.previousIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.nextIconTemplate" pTemplate="nexticon">
+    <ng-container *ngTemplateOutlet="props.nextIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.triggerIconTemplate" pTemplate="triggericon">
+    <ng-container *ngTemplateOutlet="props.triggerIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.decrementIconTemplate" pTemplate="decrementicon">
+    <ng-container *ngTemplateOutlet="props.decrementIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.incrementIconTemplate" pTemplate="incrementicon">
+    <ng-container *ngTemplateOutlet="props.incrementIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+</p-calendar>

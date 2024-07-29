@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
 import { CalendarResponsiveOptions, CalendarTypeView, LocaleSettings } from 'primeng/calendar';
@@ -81,6 +81,18 @@ interface CalendarProps extends FormlyFieldProps {
   onYearChange?: FormlyAttributeEvent;
   onClickOutside?: FormlyAttributeEvent;
   onShow?: FormlyAttributeEvent;
+  dateTemplate?: TemplateRef<any>;
+  decadeTemplate?: TemplateRef<any>;
+  disabledDateTemplate?: TemplateRef<any>;
+  headerTemplate?: TemplateRef<any>;
+  inputIconTemplate?: TemplateRef<any>;
+  previousIconTemplate?: TemplateRef<any>;
+  nextIconTemplate?: TemplateRef<any>;
+  triggerIconTemplate?: TemplateRef<any>;
+  clearIconTemplate?: TemplateRef<any>;
+  decrementIconTemplate?: TemplateRef<any>;
+  incrementIconTemplate?: TemplateRef<any>;
+  footerTemplate?: TemplateRef<any>;
 }
 
 export interface FormlyCalendarFieldConfig extends FormlyFieldConfig<CalendarProps> {
