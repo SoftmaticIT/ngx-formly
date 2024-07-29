@@ -1,7 +1,6 @@
 import { Input, Directive, QueryList, ViewChildren } from '@angular/core';
 import { FormControl, NgControl, FormGroup } from '@angular/forms';
 import { FormlyFieldConfig, FormlyFieldConfigCache } from '../models';
-import { FieldWrapper } from './field.wrapper';
 
 export interface FieldTypeConfig<T = FormlyFieldConfig['props']> extends FormlyFieldConfig<T> {
   formControl: FormControl;
