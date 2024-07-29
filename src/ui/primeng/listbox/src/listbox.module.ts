@@ -18,7 +18,6 @@ import { FormlyFieldListbox } from './listbox.type';
         {
           name: 'listbox',
           component: FormlyFieldListbox,
-          wrappers: ['form-field'],
         },
       ],
     }),

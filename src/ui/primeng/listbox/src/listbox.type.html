@@ -1,92 +1,105 @@
-<p-listbox
-  [formControl]="formControl"
-  [formlyAttributes]="field"
-  [id]="props?.id ?? null"
-  [searchMessage]="props?.searchMessage ?? null"
-  [emptySelectionMessage]="props?.emptySelectionMessage ?? null"
-  [selectionMessage]="props?.selectionMessage ?? null"
-  [autoOptionFocus]="props?.autoOptionFocus ?? true"
-  [ariaLabel]="props?.ariaLabel ?? null"
-  [selectOnFocus]="props?.selectOnFocus ?? false"
-  [searchLocale]="props?.searchLocale ?? false"
-  [focusOnHover]="props?.focusOnHover ?? false"
-  [filterMessage]="props?.filterMessage ?? null"
-  [filterFields]="props?.filterFields ?? null"
-  [lazy]="props?.lazy ?? false"
-  [virtualScroll]="props?.virtualScroll ?? false"
-  [virtualScrollItemSize]="props?.virtualScrollItemSize ?? null"
-  [virtualScrollOptions]="props?.virtualScrollOptions ?? null"
-  [scrollHeight]="props?.scrollHeight ?? '200px'"
-  [tabindex]="props?.tabindex ?? 0"
-  [multiple]="props?.multiple ?? false"
-  [style]="props?.style ?? null"
-  [styleClass]="props?.styleClass ?? null"
-  [listStyle]="props?.listStyle ?? null"
-  [listStyleClass]="props?.listStyleClass ?? null"
-  [readonly]="props?.readonly ?? false"
-  [disabled]="props?.disabled ?? false"
-  [checkbox]="props?.checkbox ?? false"
-  [filter]="props?.filter ?? false"
-  [filterBy]="props?.filterBy ?? null"
-  [filterMatchMode]="props?.filterMatchMode ?? 'contains'"
-  [filterLocale]="props?.filterLocale ?? locale"
-  [metaKeySelection]="props?.metaKeySelection ?? false"
-  [dataKey]="props?.dataKey ?? null"
-  [showToggleAll]="props?.showToggleAll ?? true"
-  [optionLabel]="props?.optionLabel ?? null"
-  [optionValue]="props?.optionValue ?? null"
-  [optionGroupChildren]="props?.optionGroupChildren ?? 'items'"
-  [optionGroupLabel]="props?.optionGroupLabel ?? 'label'"
-  [optionDisabled]="props?.optionDisabled ?? null"
-  [ariaFilterLabel]="props?.ariaFilterLabel ?? null"
-  [filterPlaceHolder]="props?.filterPlaceHolder ?? null"
-  [emptyFilterMessage]="props?.emptyFilterMessage ?? null"
-  [emptyMessage]="props?.emptyMessage ?? null"
-  [group]="props?.group ?? false"
-  [options]="$any(props?.options) ?? null"
-  [filterValue]="props?.filterValue ?? null"
-  [selectAll]="props?.selectAll ?? null"
-  (onChange)="props?.onChange?.(this, $event)"
-  (onClick)="props?.onClick?.(this, $event)"
-  (onDblClick)="props?.onDblClick?.(this, $event)"
-  (onFilter)="props?.onFilter?.(this, $event)"
-  (onFocus)="props?.onFocus?.(this, $event)"
-  (onBlur)="props?.onBlur?.(this, $event)"
-  (onSelectAllChange)="props?.onSelectAllChange?.(this, $event)"
->
-  <ng-template *ngIf="props?.itemTemplate" let-item let-index="index" pTemplate="item">
-    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item, index: index }"></ng-container>
-  </ng-template>
+<div class="p-field">
+  <label *ngIf="props.label && props.hideLabel !== true" [for]="id">
+    {{ props.label }}
+    <span *ngIf="props.required && props.hideRequiredMarker !== true" aria-hidden="true">*</span>
+  </label>
 
-  <ng-template *ngIf="props?.groupTemplate" let-group pTemplate="group">
-    <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: group }"></ng-container>
-  </ng-template>
+  <p-listbox
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [id]="props?.id ?? null"
+    [searchMessage]="props?.searchMessage ?? null"
+    [emptySelectionMessage]="props?.emptySelectionMessage ?? null"
+    [selectionMessage]="props?.selectionMessage ?? null"
+    [autoOptionFocus]="props?.autoOptionFocus ?? true"
+    [ariaLabel]="props?.ariaLabel ?? null"
+    [selectOnFocus]="props?.selectOnFocus ?? false"
+    [searchLocale]="props?.searchLocale ?? false"
+    [focusOnHover]="props?.focusOnHover ?? false"
+    [filterMessage]="props?.filterMessage ?? null"
+    [filterFields]="props?.filterFields ?? null"
+    [lazy]="props?.lazy ?? false"
+    [virtualScroll]="props?.virtualScroll ?? false"
+    [virtualScrollItemSize]="props?.virtualScrollItemSize ?? null"
+    [virtualScrollOptions]="props?.virtualScrollOptions ?? null"
+    [scrollHeight]="props?.scrollHeight ?? '200px'"
+    [tabindex]="props?.tabindex ?? 0"
+    [multiple]="props?.multiple ?? false"
+    [style]="props?.style ?? null"
+    [styleClass]="props?.styleClass ?? null"
+    [listStyle]="props?.listStyle ?? null"
+    [listStyleClass]="props?.listStyleClass ?? null"
+    [readonly]="props?.readonly ?? false"
+    [disabled]="props?.disabled ?? false"
+    [checkbox]="props?.checkbox ?? false"
+    [filter]="props?.filter ?? false"
+    [filterBy]="props?.filterBy ?? null"
+    [filterMatchMode]="props?.filterMatchMode ?? 'contains'"
+    [filterLocale]="props?.filterLocale ?? locale"
+    [metaKeySelection]="props?.metaKeySelection ?? false"
+    [dataKey]="props?.dataKey ?? null"
+    [showToggleAll]="props?.showToggleAll ?? true"
+    [optionLabel]="props?.optionLabel ?? null"
+    [optionValue]="props?.optionValue ?? null"
+    [optionGroupChildren]="props?.optionGroupChildren ?? 'items'"
+    [optionGroupLabel]="props?.optionGroupLabel ?? 'label'"
+    [optionDisabled]="props?.optionDisabled ?? null"
+    [ariaFilterLabel]="props?.ariaFilterLabel ?? null"
+    [filterPlaceHolder]="props?.filterPlaceHolder ?? null"
+    [emptyFilterMessage]="props?.emptyFilterMessage ?? null"
+    [emptyMessage]="props?.emptyMessage ?? null"
+    [group]="props?.group ?? false"
+    [options]="$any(props?.options) ?? null"
+    [filterValue]="props?.filterValue ?? null"
+    [selectAll]="props?.selectAll ?? null"
+    [required]="props?.required ?? false"
+    (onChange)="props?.onChange?.(this, $event)"
+    (onClick)="props?.onClick?.(this, $event)"
+    (onDblClick)="props?.onDblClick?.(this, $event)"
+    (onFilter)="props?.onFilter?.(this, $event)"
+    (onFocus)="props?.onFocus?.(this, $event)"
+    (onBlur)="props?.onBlur?.(this, $event)"
+    (onSelectAllChange)="props?.onSelectAllChange?.(this, $event)"
+  >
+    <ng-template *ngIf="props?.itemTemplate" let-item let-index="index" pTemplate="item">
+      <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item, index: index }"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
-    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.groupTemplate" let-group pTemplate="group">
+      <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: group }"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.filterTemplate" let-options="options" pTemplate="filter">
-    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: options }"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
+      <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
-    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.filterTemplate" let-options="options" pTemplate="filter">
+      <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: options }"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
-    <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+      <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.emptyFilterTemplate" pTemplate="emptyfilter">
-    <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
+      <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
-    <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
-  </ng-template>
+    <ng-template *ngIf="props?.emptyFilterTemplate" pTemplate="emptyfilter">
+      <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
+    </ng-template>
 
-  <ng-template *ngIf="props?.checkIconTemplate" pTemplate="checkicon">
-    <ng-container *ngTemplateOutlet="props.checkIconTemplate"></ng-container>
-  </ng-template>
-</p-listbox>
+    <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
+      <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
+    </ng-template>
+
+    <ng-template *ngIf="props?.checkIconTemplate" pTemplate="checkicon">
+      <ng-container *ngTemplateOutlet="props.checkIconTemplate"></ng-container>
+    </ng-template>
+  </p-listbox>
+
+  <!-- I added "form.dirty" otherwise it won't show errors for listbox -->
+  <small *ngIf="showError || form.dirty" class="p-error">
+    <formly-validation-message class="ui-message-text" [field]="field" />
+  </small>
+</div>
