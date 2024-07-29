@@ -64,15 +64,15 @@
   [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
   [filterValue]="props?.filterValue ?? null"
   [options]="props?.options ?? null"
-  (onChange)="props?.change?.(this, $event)"
-  (onFilter)="props?.search?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
-  (onClick)="props?.click?.(this, $event)"
-  (onShow)="props?.show?.(this, $event)"
-  (onHide)="props?.hide?.(this, $event)"
-  (onClear)="props?.clear?.(this, $event)"
-  (onLazyLoad)="props?.lazyLoad?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
+  (onFilter)="props?.onFilter?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onClick)="props?.onClick?.(this, $event)"
+  (onShow)="props?.onShow?.(this, $event)"
+  (onHide)="props?.onHide?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+  (onLazyLoad)="props?.onLazyLoad?.(this, $event)"
 >
   <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
     <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
@@ -86,8 +86,8 @@
     <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.filterTemplate" pTemplate="filter" let-options="options">
-    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { $implicit: options }"></ng-container>
+  <ng-template *ngIf="props?.filterTemplate" let-options="options" pTemplate="filter">
+    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: options }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
@@ -106,8 +106,8 @@
     <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: group }"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.loaderTemplate" let-loader pTemplate="loader">
-    <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { $implicit: loader }"></ng-container>
+  <ng-template *ngIf="props?.loaderTemplate" let-options="options" pTemplate="loader">
+    <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { options: options }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.dropdownIconTemplate" pTemplate="dropdownicon">

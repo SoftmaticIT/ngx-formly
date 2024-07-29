@@ -24,7 +24,7 @@
   </div>
 </ng-template>
 
-<ng-template #filter let-options>
+<ng-template #filter let-options="options">
   <div class="flex gap-1">
     <div class="p-inputgroup" (click)="$event.stopPropagation()">
       <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
