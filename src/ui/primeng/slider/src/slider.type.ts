@@ -16,7 +16,8 @@ interface SliderProps extends FormlyFieldProps {
   ariaLabelledBy?: string;
   tabindex?: number;
   autofocus?: boolean;
-  slideEnd?: FormlyAttributeEvent;
+  onChange?: FormlyAttributeEvent;
+  onSlideEnd?: FormlyAttributeEvent;
 }
 
 export interface FormlySliderFieldConfig extends FormlyFieldConfig<SliderProps> {

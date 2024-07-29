@@ -14,6 +14,6 @@
   [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
   [tabindex]="props?.tabindex ?? 0"
   [autofocus]="props?.autofocus ?? false"
-  (onChange)="props?.change?.(this, $event)"
-  (onSlideEnd)="props?.slideEnd?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
+  (onSlideEnd)="props?.onSlideEnd?.(this, $event)"
 />
