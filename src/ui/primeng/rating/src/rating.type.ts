@@ -13,7 +13,10 @@ interface RatingProps extends FormlyFieldProps {
   iconCancelClass?: string;
   iconCancelStyle?: Object;
   autofocus?: boolean;
-  rate?: FormlyAttributeEvent;
+  onRate?: FormlyAttributeEvent;
+  onCancel?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
   onIconTemplate?: TemplateRef<any>;
   offIconTemplate?: TemplateRef<any>;
   cancelIconTemplate?: TemplateRef<any>;

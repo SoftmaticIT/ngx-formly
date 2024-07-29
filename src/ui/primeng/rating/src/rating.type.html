@@ -14,6 +14,10 @@
     [iconCancelStyle]="props?.iconCancelStyle ?? null"
     [autofocus]="props?.autofocus ?? false"
     [required]="props?.required ?? false"
+    (onRate)="props?.onRate?.(this, $event)"
+    (onCancel)="props?.onCancel?.(this, $event)"
+    (onFocus)="props?.onFocus?.(this, $event)"
+    (onBlur)="props?.onBlur?.(this, $event)"
   >
     <ng-template *ngIf="props?.onIconTemplate" pTemplate="onicon">
       <ng-container *ngTemplateOutlet="props.onIconTemplate"></ng-container>
