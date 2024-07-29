@@ -6,7 +6,7 @@ import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 interface InputTextareaProps extends FormlyFieldProps {
   autoResize?: boolean;
   variant?: 'outlined' | 'filled';
-  resize?: FormlyAttributeEvent;
+  onResize?: FormlyAttributeEvent;
 }
 
 export interface FormlyInputTextareaFieldConfig extends FormlyFieldConfig<InputTextareaProps> {

@@ -9,5 +9,5 @@
   [required]="props?.required ?? false"
   [readOnly]="props?.readonly ?? false"
   [disabled]="props?.disabled ?? false"
-  (onResize)="props?.resize?.(this, $event)"
+  (onResize)="props?.onResize?.(this, $event)"
 ></textarea>
