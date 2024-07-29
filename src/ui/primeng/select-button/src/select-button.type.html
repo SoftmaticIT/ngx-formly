@@ -1,0 +1,25 @@
+<p-selectButton
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [options]="props?.options ?? null"
+  [optionLabel]="props?.optionLabel ?? null"
+  [optionValue]="props?.optionValue ?? null"
+  [optionDisabled]="props?.optionDisabled ?? null"
+  [unselectable]="props?.unselectable ?? false"
+  [tabindex]="props?.tabindex ?? 0"
+  [multiple]="props?.multiple ?? false"
+  [allowEmpty]="props?.allowEmpty ?? true"
+  [style]="props?.style ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [disabled]="props?.disabled ?? false"
+  [dataKey]="props?.dataKey ?? null"
+  [autofocus]="props?.autofocus ?? false"
+  [required]="props?.required ?? false"
+  (onOptionClick)="props?.onOptionClick?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
+>
+  <ng-template *ngIf="props?.itemTemplate" pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate"></ng-container>
+  </ng-template>
+</p-selectButton>
