@@ -1,18 +1,20 @@
-<p-inputSwitch
-  [formControl]="formControl"
-  [formlyAttributes]="field"
-  [ngStyle]="props?.style ?? null"
-  [styleClass]="props?.styleClass ?? null"
-  [tabindex]="props?.tabindex ?? null"
-  [inputId]="props?.inputId ?? null"
-  [name]="props?.name ?? null"
-  [disabled]="props?.disabled ?? false"
-  [readonly]="props?.readonly ?? false"
-  [trueValue]="props?.trueValue ?? true"
-  [falseValue]="props?.falseValue ?? false"
-  [ariaLabel]="props?.ariaLabel ?? null"
-  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
-  [autofocus]="props?.autofocus ?? false"
-  [required]="props?.required ?? false"
-  (onChange)="props?.change?.(this, $event)"
-/>
+<div class="p-field">
+  <p-inputSwitch
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [ngStyle]="props?.style ?? null"
+    [styleClass]="props?.styleClass ?? null"
+    [tabindex]="props?.tabindex ?? null"
+    [inputId]="props?.inputId ?? null"
+    [name]="props?.name ?? null"
+    [disabled]="props?.disabled ?? false"
+    [readonly]="props?.readonly ?? false"
+    [trueValue]="props?.trueValue ?? true"
+    [falseValue]="props?.falseValue ?? false"
+    [ariaLabel]="props?.ariaLabel ?? null"
+    [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+    [autofocus]="props?.autofocus ?? false"
+    [required]="props?.required ?? false"
+    (onChange)="props?.onChange?.(this, $event)"
+  />
+</div>

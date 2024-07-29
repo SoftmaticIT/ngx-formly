@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Type } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface InputSwitchProps extends FormlyFieldProps {
   style?: any;
@@ -13,6 +14,7 @@ interface InputSwitchProps extends FormlyFieldProps {
   ariaLabel?: string;
   ariaLabelledBy?: string;
   autofocus?: boolean;
+  onChange?: FormlyAttributeEvent;
 }
 
 export interface FormlyInputSwitchFieldConfig extends FormlyFieldConfig<InputSwitchProps> {
