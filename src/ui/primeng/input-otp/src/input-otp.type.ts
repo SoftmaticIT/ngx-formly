@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface InputOtpProps extends FormlyFieldProps {
   invalid?: boolean;
@@ -9,6 +10,9 @@ interface InputOtpProps extends FormlyFieldProps {
   mask?: boolean;
   integerOnly?: boolean;
   autofocus?: boolean;
+  onChange?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
   inputTemplate?: TemplateRef<any>;
 }
 

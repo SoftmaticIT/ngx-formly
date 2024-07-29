@@ -10,9 +10,9 @@
   [mask]="props?.mask ?? false"
   [integerOnly]="props?.integerOnly ?? false"
   [autofocus]="props?.autofocus ?? false"
-  (onChange)="props?.change?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
 >
   <ng-template *ngIf="props?.inputTemplate" let-token let-events="events" pTemplate="input">
     <ng-container *ngTemplateOutlet="props.inputTemplate; context: { $implicit: token, events: events }"></ng-container>
