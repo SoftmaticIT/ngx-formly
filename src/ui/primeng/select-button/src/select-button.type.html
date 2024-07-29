@@ -16,10 +16,10 @@
   [dataKey]="props?.dataKey ?? null"
   [autofocus]="props?.autofocus ?? false"
   [required]="props?.required ?? false"
-  (onOptionClick)="props?.optionClick?.(this, $event)"
-  (onChange)="props?.change?.(this, $event)"
+  (onOptionClick)="props?.onOptionClick?.(this, $event)"
+  (onChange)="props?.onChange?.(this, $event)"
 >
-  <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
-    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+  <ng-template *ngIf="props?.itemTemplate" pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate"></ng-container>
   </ng-template>
 </p-selectButton>

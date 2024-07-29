@@ -18,7 +18,8 @@ interface SelectButtonProps extends FormlyFieldProps {
   disabled?: boolean;
   dataKey?: string;
   autofocus?: boolean;
-  optionClick?: FormlyAttributeEvent;
+  onOptionClick?: FormlyAttributeEvent;
+  onChange?: FormlyAttributeEvent;
   itemTemplate?: TemplateRef<any>;
 }
 
