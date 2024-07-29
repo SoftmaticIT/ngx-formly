@@ -24,12 +24,12 @@
   [variant]="props?.variant ?? 'outlined'"
   [required]="props?.required ?? false"
   [disabled]="props?.disabled ?? false"
-  (onAdd)="props?.add?.(this, $event)"
-  (onRemove)="props?.remove?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
-  (onChipClick)="props?.click?.(this, $event)"
-  (onClear)="props?.clear?.(this, $event)"
+  (onAdd)="props?.onAdd?.(this, $event)"
+  (onRemove)="props?.onRemove?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onChipClick)="props?.onChipClick?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
 >
   <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
     <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>

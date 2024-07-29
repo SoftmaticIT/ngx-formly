@@ -24,9 +24,12 @@ interface ChipsProps extends FormlyFieldProps {
   showClear?: boolean;
   autofocus?: boolean;
   variant?: 'outlined' | 'filled';
-  add?: FormlyAttributeEvent;
-  remove?: FormlyAttributeEvent;
-  clear?: FormlyAttributeEvent;
+  onAdd?: FormlyAttributeEvent;
+  onRemove?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
+  onChipClick?: FormlyAttributeEvent;
+  onClear?: FormlyAttributeEvent;
   itemTemplate?: TemplateRef<any>;
   removeTokenIconTemplate?: TemplateRef<any>;
   clearIconTemplate?: TemplateRef<any>;
