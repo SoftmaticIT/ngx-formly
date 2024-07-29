@@ -40,23 +40,28 @@
   [showTransitionOptions]="props?.showTransitionOptions ?? null"
   [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
   [loading]="props?.loading ?? false"
-  (onNodeExpand)="props?.nodeExpand?.(this, $event)"
-  (onNodeCollapse)="props?.nodeCollapse?.(this, $event)"
-  (onShow)="props?.show?.(this, $event)"
-  (onHide)="props?.hide?.(this, $event)"
-  (onClear)="props?.clear?.(this, $event)"
+  [required]="props?.required ?? false"
+  (onNodeExpand)="props?.onNodeExpand?.(this, $event)"
+  (onNodeCollapse)="props?.onNodeCollapse?.(this, $event)"
+  (onShow)="props?.onShow?.(this, $event)"
+  (onHide)="props?.onHide?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
   (onFilter)="props?.onFilter?.(this, $event)"
-  (onFocus)="props?.focus?.(this, $event)"
-  (onBlur)="props?.blur?.(this, $event)"
-  (onNodeUnselect)="props?.nodeUnselect?.(this, $event)"
-  (onNodeSelect)="props?.nodeSelect?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onNodeUnselect)="props?.onNodeUnselect?.(this, $event)"
+  (onNodeSelect)="props?.onNodeSelect?.(this, $event)"
 >
-  <ng-template *ngIf="props?.valueTemplate" let-item pTemplate="value">
-    <ng-container *ngTemplateOutlet="props.valueTemplate; context: { $implicit: item }"></ng-container>
+  <ng-template *ngIf="props?.valueTemplate" let-item let-placeholder="placeholder" pTemplate="value">
+    <ng-container
+      *ngTemplateOutlet="props.valueTemplate; context: { $implicit: item, placeholder: placeholder }"
+    ></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.headerTemplate" let-item pTemplate="header">
-    <ng-container *ngTemplateOutlet="props.headerTemplate; context: { $implicit: item }"></ng-container>
+  <ng-template *ngIf="props?.headerTemplate" let-item let-options="options" pTemplate="header">
+    <ng-container
+      *ngTemplateOutlet="props.headerTemplate; context: { $implicit: item, options: options }"
+    ></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
@@ -83,8 +88,8 @@
     <ng-container *ngTemplateOutlet="props.closeIconTemplate"></ng-container>
   </ng-template>
 
-  <ng-template *ngIf="props?.itemTogglerIconTemplate" let-item pTemplate="itemtogglericon">
-    <ng-container *ngTemplateOutlet="props.itemTogglerIconTemplate; context: { $implicit: item }"></ng-container>
+  <ng-template *ngIf="props?.itemTogglerIconTemplate" let-expanded pTemplate="itemtogglericon">
+    <ng-container *ngTemplateOutlet="props.itemTogglerIconTemplate; context: { $implicit: expanded }"></ng-container>
   </ng-template>
 
   <ng-template *ngIf="props?.itemCheckboxIconTemplate" pTemplate="itemcheckboxicon">
