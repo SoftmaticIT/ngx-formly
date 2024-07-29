@@ -1,0 +1,132 @@
+<p-calendar
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [style]="props?.style ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [inputStyle]="props?.inputStyle ?? null"
+  [inputId]="props?.inputId ?? null"
+  [name]="props?.name ?? null"
+  [inputStyleClass]="props?.inputStyleClass ?? null"
+  [placeholder]="props?.placeholder ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [iconAriaLabel]="props?.iconAriaLabel ?? null"
+  [disabled]="props?.disabled ?? false"
+  [dateFormat]="props?.dateFormat ?? null"
+  [multipleSeparator]="props?.multipleSeparator ?? ','"
+  [rangeSeparator]="props?.rangeSeparator ?? '-'"
+  [inline]="props?.inline ?? false"
+  [showOtherMonths]="props?.showOtherMonths ?? true"
+  [selectOtherMonths]="props?.selectOtherMonths ?? false"
+  [showIcon]="props?.showIcon ?? false"
+  [icon]="props?.icon ?? null"
+  [appendTo]="props?.appendTo ?? null"
+  [readonlyInput]="props?.readonlyInput ?? false"
+  [shortYearCutoff]="props?.shortYearCutoff ?? '+10'"
+  [monthNavigator]="props?.monthNavigator ?? false"
+  [yearNavigator]="props?.yearNavigator ?? false"
+  [hourFormat]="props?.hourFormat ?? '24'"
+  [timeOnly]="props?.timeOnly ?? false"
+  [stepYearPicker]="props?.stepYearPicker ?? 10"
+  [stepHour]="props?.stepHour ?? 1"
+  [stepMinute]="props?.stepMinute ?? 1"
+  [stepSecond]="props?.stepSecond ?? 1"
+  [showSeconds]="props?.showSeconds ?? false"
+  [required]="props?.required ?? false"
+  [showOnFocus]="props?.showOnFocus ?? true"
+  [showWeek]="props?.showWeek ?? false"
+  [startWeekFromFirstDayOfYear]="props?.startWeekFromFirstDayOfYear ?? false"
+  [showClear]="props?.showClear ?? false"
+  [dataType]="props?.dataType ?? 'date'"
+  [selectionMode]="props?.selectionMode ?? 'single'"
+  [maxDateCount]="props?.maxDateCount ?? null"
+  [showButtonBar]="props?.showButtonBar ?? false"
+  [todayButtonStyleClass]="props?.todayButtonStyleClass ?? 'p-button-text'"
+  [clearButtonStyleClass]="props?.clearButtonStyleClass ?? 'p-button-text'"
+  [autofocus]="props?.autofocus ?? false"
+  [autoZIndex]="props?.autoZIndex ?? true"
+  [baseZIndex]="props?.baseZIndex ?? 0"
+  [panelStyleClass]="props?.panelStyleClass ?? null"
+  [panelStyle]="props?.panelStyle ?? null"
+  [keepInvalid]="props?.keepInvalid ?? false"
+  [hideOnDateTimeSelect]="props?.hideOnDateTimeSelect ?? true"
+  [touchUI]="props?.touchUI ?? false"
+  [timeSeparator]="props?.timeSeparator ?? ':'"
+  [focusTrap]="props?.focusTrap ?? true"
+  [showTransitionOptions]="props?.showTransitionOptions ?? '.12s cubic-bezier(0, 0, 0.2, 1)'"
+  [hideTransitionOptions]="props?.hideTransitionOptions ?? '.1s linear'"
+  [tabindex]="props?.tabindex ?? null"
+  [variant]="props?.variant ?? 'outlined'"
+  [minDate]="props?.minDate ?? null"
+  [maxDate]="props?.maxDate ?? null"
+  [disabledDates]="props?.disabledDates ?? null"
+  [disabledDays]="props?.disabledDays ?? null"
+  [yearRange]="props?.yearRange ?? null"
+  [showTime]="props?.showTime ?? null"
+  [responsiveOptions]="props?.responsiveOptions ?? null"
+  [numberOfMonths]="props?.numberOfMonths ?? 1"
+  [firstDayOfWeek]="props?.firstDayOfWeek ?? null"
+  [locale]="props?.locale ?? null"
+  [view]="props?.view ?? 'date'"
+  [defaultDate]="props?.defaultDate ?? currentDate"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onClose)="props?.onClose?.(this, $any($event))"
+  (onSelect)="props?.onSelect?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+  (onInput)="props?.onInput?.(this, $event)"
+  (onTodayClick)="props?.onTodayClick?.(this, $event)"
+  (onClearClick)="props?.onClearClick?.(this, $event)"
+  (onMonthChange)="props?.onMonthChange?.(this, $event)"
+  (onYearChange)="props?.onYearChange?.(this, $event)"
+  (onClickOutside)="props?.onClickOutside?.(this, $event)"
+  (onShow)="props?.onShow?.(this, $event)"
+>
+  <ng-template *ngIf="props?.dateTemplate" let-value pTemplate="date">
+    <ng-container *ngTemplateOutlet="props.dateTemplate; context: { $implicit: value }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.decadeTemplate" let-value pTemplate="decade">
+    <ng-container *ngTemplateOutlet="props.decadeTemplate; context: { $implicit: value }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.disabledDateTemplate" pTemplate="disabledDate">
+    <ng-container *ngTemplateOutlet="props.disabledDateTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
+    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.inputIconTemplate" let-clickCallBack="clickCallBack" pTemplate="inputIcon">
+    <ng-container *ngTemplateOutlet="props.inputIconTemplate; context: { clickCallBack: clickCallBack }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.previousIconTemplate" pTemplate="previousicon">
+    <ng-container *ngTemplateOutlet="props.previousIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.nextIconTemplate" pTemplate="nexticon">
+    <ng-container *ngTemplateOutlet="props.nextIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.triggerIconTemplate" pTemplate="triggericon">
+    <ng-container *ngTemplateOutlet="props.triggerIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.decrementIconTemplate" pTemplate="decrementicon">
+    <ng-container *ngTemplateOutlet="props.decrementIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.incrementIconTemplate" pTemplate="incrementicon">
+    <ng-container *ngTemplateOutlet="props.incrementIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+</p-calendar>

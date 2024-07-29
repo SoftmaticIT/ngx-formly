@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { AppComponent } from './app.component';
-import { FormlyAutoCompleteModule } from '@ngx-formly/primeng/auto-complete';
+import { FormlyCalendarModule } from '@ngx-formly/ui/primeng/calendar';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { FormlyAutoCompleteModule } from '@ngx-formly/primeng/auto-complete';
     FormlyModule.forRoot({
       validationMessages: [{ name: 'required', message: 'This field is required' }],
     }),
-    FormlyAutoCompleteModule,
+    FormlyCalendarModule,
   ],
   declarations: [AppComponent],
 })
