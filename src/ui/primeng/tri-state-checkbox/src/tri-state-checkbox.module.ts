@@ -18,7 +18,6 @@ import { FormlyFieldTriStateCheckbox } from './tri-state-checkbox.type';
         {
           name: 'tri-state-checkbox',
           component: FormlyFieldTriStateCheckbox,
-          wrappers: ['form-field'],
         },
       ],
     }),

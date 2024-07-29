@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface TriStateCheckboxProps extends FormlyFieldProps {
   name?: string;
@@ -15,6 +16,7 @@ interface TriStateCheckboxProps extends FormlyFieldProps {
   checkboxTrueIcon?: string;
   checkboxFalseIcon?: string;
   autofocus?: boolean;
+  onChange?: FormlyAttributeEvent;
   checkIconTemplate?: TemplateRef<any>;
   uncheckIconTemplate?: TemplateRef<any>;
 }

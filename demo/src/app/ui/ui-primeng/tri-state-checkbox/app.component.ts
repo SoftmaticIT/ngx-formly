@@ -16,6 +16,7 @@ export class AppComponent {
       type: 'tri-state-checkbox',
       props: {
         label: 'TriStateCheckbox',
+        required: true,
       },
     },
   ];

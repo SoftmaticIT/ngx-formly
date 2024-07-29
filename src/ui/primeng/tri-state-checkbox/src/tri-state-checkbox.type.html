@@ -17,6 +17,7 @@
     [checkboxFalseIcon]="props?.checkboxFalseIcon ?? null"
     [autofocus]="props?.autofocus ?? false"
     [required]="props?.required ?? false"
+    (onChange)="props?.onChange?.(this, $event)"
   >
     <ng-template *ngIf="props?.checkIconTemplate" pTemplate="checkicon">
       <ng-container *ngTemplateOutlet="props.checkIconTemplate"></ng-container>
@@ -27,3 +28,6 @@
     </ng-template>
   </p-triStateCheckbox>
 </div>
+<small *ngIf="showError" class="p-error">
+  <formly-validation-message class="ui-message-text" [field]="field" />
+</small>
