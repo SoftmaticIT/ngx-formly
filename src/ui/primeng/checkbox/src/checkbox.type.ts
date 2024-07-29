@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Type, TemplateRef } from '@angular/core';
 import { FieldType, FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyFieldProps } from '@ngx-formly/primeng/form-field';
+import { FormlyAttributeEvent } from 'src/core/src/lib/models';
 
 interface CheckboxProps extends FormlyFieldProps {
   value?: any;
@@ -18,6 +19,9 @@ interface CheckboxProps extends FormlyFieldProps {
   trueValue?: any;
   falseValue?: any;
   variant?: 'outlined' | 'filled';
+  onChange?: FormlyAttributeEvent;
+  onFocus?: FormlyAttributeEvent;
+  onBlur?: FormlyAttributeEvent;
   iconTemplate?: TemplateRef<any>;
 }
 

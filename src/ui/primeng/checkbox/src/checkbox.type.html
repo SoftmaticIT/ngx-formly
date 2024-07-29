@@ -21,9 +21,9 @@
     [trueValue]="props?.trueValue ?? true"
     [falseValue]="props?.falseValue ?? false"
     [variant]="props?.variant ?? 'outlined'"
-    (onFocus)="props?.focus?.(this, $event)"
-    (onBlur)="props?.blur?.(this, $event)"
-    (onChange)="props?.change?.(this, $event)"
+    (onChange)="props?.onChange?.(this, $event)"
+    (onFocus)="props?.onFocus?.(this, $event)"
+    (onBlur)="props?.onBlur?.(this, $event)"
   >
     <ng-template *ngIf="props?.iconTemplate" pTemplate="icon">
       <ng-container *ngTemplateOutlet="props.iconTemplate"></ng-container>
