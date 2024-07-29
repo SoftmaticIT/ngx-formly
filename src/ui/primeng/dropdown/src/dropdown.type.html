@@ -1,0 +1,124 @@
+<p-dropdown
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [id]="props?.id ?? null"
+  [scrollHeight]="props?.scrollHeight ?? '200px'"
+  [filter]="props?.filter ?? false"
+  [name]="props?.name ?? null"
+  [style]="props?.style ?? null"
+  [panelStyle]="props?.panelStyle ?? null"
+  [styleClass]="props?.styleClass ?? null"
+  [panelStyleClass]="props?.panelStyleClass ?? null"
+  [readonly]="props?.readonly ?? false"
+  [required]="props?.required ?? false"
+  [editable]="props?.editable ?? false"
+  [appendTo]="props?.appendTo ?? null"
+  [tabindex]="props?.tabindex ?? 0"
+  [placeholder]="props?.placeholder ?? null"
+  [loadingIcon]="props?.loadingIcon ?? null"
+  [filterPlaceholder]="props?.filterPlaceholder ?? null"
+  [filterLocale]="props?.filterLocale ?? locale"
+  [variant]="props?.variant ?? 'outlined'"
+  [inputId]="props?.inputId ?? null"
+  [dataKey]="props?.dataKey ?? null"
+  [filterBy]="props?.filterBy ?? null"
+  [filterFields]="props?.filterFields ?? null"
+  [autofocus]="props?.autofocus ?? false"
+  [resetFilterOnHide]="props?.resetFilterOnHide ?? false"
+  [checkmark]="props?.checkmark ?? false"
+  [dropdownIcon]="props?.dropdownIcon ?? null"
+  [loading]="props?.loading ?? false"
+  [optionLabel]="props?.optionLabel ?? null"
+  [optionValue]="props?.optionValue ?? null"
+  [optionDisabled]="props?.optionDisabled ?? null"
+  [optionGroupLabel]="props?.optionGroupLabel ?? 'label'"
+  [optionGroupChildren]="props?.optionGroupChildren ?? 'items'"
+  [autoDisplayFirst]="props?.autoDisplayFirst ?? true"
+  [group]="props?.group ?? false"
+  [showClear]="props?.showClear ?? false"
+  [emptyFilterMessage]="props?.emptyFilterMessage ?? null"
+  [emptyMessage]="props?.emptyMessage ?? null"
+  [lazy]="props?.lazy ?? false"
+  [virtualScroll]="props?.virtualScroll ?? false"
+  [virtualScrollItemSize]="props?.virtualScrollItemSize ?? null"
+  [virtualScrollOptions]="props?.virtualScrollOptions ?? null"
+  [overlayOptions]="props?.overlayOptions ?? null"
+  [ariaFilterLabel]="props?.ariaFilterLabel ?? null"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [filterMatchMode]="props?.filterMatchMode ?? 'contains'"
+  [maxlength]="props?.maxlength ?? null"
+  [tooltip]="props?.tooltip ?? null"
+  [tooltipPosition]="props?.tooltipPosition ?? 'right'"
+  [tooltipPositionStyle]="props?.tooltipPositionStyle ?? 'absolute'"
+  [tooltipStyleClass]="props?.tooltipStyleClass ?? null"
+  [focusOnHover]="props?.focusOnHover ?? false"
+  [selectOnFocus]="props?.selectOnFocus ?? false"
+  [autoOptionFocus]="props?.autoOptionFocus ?? true"
+  [autofocusFilter]="props?.autofocusFilter ?? true"
+  [disabled]="props?.disabled ?? null"
+  [itemSize]="props?.itemSize ?? null"
+  [autoZIndex]="props?.autoZIndex ?? null"
+  [baseZIndex]="props?.baseZIndex ?? null"
+  [showTransitionOptions]="props?.showTransitionOptions ?? null"
+  [hideTransitionOptions]="props?.hideTransitionOptions ?? null"
+  [filterValue]="props?.filterValue ?? null"
+  [options]="props?.options ?? null"
+  (onChange)="props?.onChange?.(this, $event)"
+  (onFilter)="props?.onFilter?.(this, $event)"
+  (onFocus)="props?.onFocus?.(this, $event)"
+  (onBlur)="props?.onBlur?.(this, $event)"
+  (onClick)="props?.onClick?.(this, $event)"
+  (onShow)="props?.onShow?.(this, $event)"
+  (onHide)="props?.onHide?.(this, $event)"
+  (onClear)="props?.onClear?.(this, $event)"
+  (onLazyLoad)="props?.onLazyLoad?.(this, $event)"
+>
+  <ng-template *ngIf="props?.itemTemplate" let-item pTemplate="item">
+    <ng-container *ngTemplateOutlet="props.itemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.selectedItemTemplate" let-item pTemplate="selectedItem">
+    <ng-container *ngTemplateOutlet="props.selectedItemTemplate; context: { $implicit: item }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.headerTemplate" pTemplate="header">
+    <ng-container *ngTemplateOutlet="props.headerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterTemplate" let-options="options" pTemplate="filter">
+    <ng-container *ngTemplateOutlet="props.filterTemplate; context: { options: options }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.footerTemplate" pTemplate="footer">
+    <ng-container *ngTemplateOutlet="props.footerTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyFilterTemplate" pTemplate="emptyfilter">
+    <ng-container *ngTemplateOutlet="props.emptyFilterTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.emptyTemplate" pTemplate="empty">
+    <ng-container *ngTemplateOutlet="props.emptyTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.groupTemplate" let-group pTemplate="group">
+    <ng-container *ngTemplateOutlet="props.groupTemplate; context: { $implicit: group }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.loaderTemplate" let-options="options" pTemplate="loader">
+    <ng-container *ngTemplateOutlet="props.loaderTemplate; context: { options: options }"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.dropdownIconTemplate" pTemplate="dropdownicon">
+    <ng-container *ngTemplateOutlet="props.dropdownIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.clearIconTemplate" pTemplate="clearicon">
+    <ng-container *ngTemplateOutlet="props.clearIconTemplate"></ng-container>
+  </ng-template>
+
+  <ng-template *ngIf="props?.filterIconTemplate" pTemplate="filtericon">
+    <ng-container *ngTemplateOutlet="props.filterIconTemplate"></ng-container>
+  </ng-template>
+</p-dropdown>
