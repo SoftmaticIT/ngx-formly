@@ -4,7 +4,7 @@ import { join } from 'path';
 
 export const PACKAGES = [
   'core',
-  'schematics',
+  // 'schematics',
 
   // UI
   'bootstrap',
