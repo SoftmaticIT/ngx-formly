@@ -1,0 +1,12 @@
+<p-chart
+  [type]="props?.type ?? 'bar'"
+  [plugins]="props?.plugins ?? []"
+  [width]="props?.width ?? null"
+  [height]="props?.height ?? null"
+  [responsive]="props?.responsive ?? true"
+  [ariaLabel]="props?.ariaLabel ?? null"
+  [ariaLabelledBy]="props?.ariaLabelledBy ?? null"
+  [data]="props?.data ?? null"
+  [options]="props?.options ?? null"
+  (onDataSelect)="props?.onDataSelect?.(this, $event)"
+/>
