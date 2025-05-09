@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
+
+<ng-template let-value #selectedItems>
+  <div class="inline-flex align-items-center gap-2 px-1" *ngFor="let option of value">
+    <img
+      src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+      [class]="'flag flag-' + option.code.toLowerCase()"
+      style="width: 18px"
+    />
+    <div>{{ option.name }},</div>
+  </div>
+  <div *ngIf="!value || value.length === 0">Select Countries</div>
+</ng-template>
+
+<ng-template let-country #item>
+  <div class="flex align-items-center gap-2">
+    <img
+      src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+      [class]="'flag flag-' + country.code.toLowerCase()"
+      style="width: 18px"
+    />
+    <div>{{ country.name }}</div>
+  </div>
+</ng-template>
+
+<ng-template let-country #footer>
+  <div class="py-2 px-3">
+    <b>
+      {{ model?.multiselect?.length ?? 0 }}
+    </b>
+    item{{ (model?.multiselect?.length ?? 0) > 1 ? 's' : '' }} selected.
+  </div>
+</ng-template>
