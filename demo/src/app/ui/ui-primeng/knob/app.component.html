@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+</form>
+
+<div class="flex gap-2">
+  <p-button icon="pi pi-plus" (onClick)="update(model.knob + 1)" [disabled]="model.knob >= 100" />
+  <p-button icon="pi pi-minus" (onClick)="update(model.knob - 1)" [disabled]="model.knob <= 0" />
+</div>
