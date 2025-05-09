@@ -1,0 +1,34 @@
+<div class="p-field">
+  <p-rating
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    [disabled]="props?.disabled ?? false"
+    [readonly]="props?.readonly ?? false"
+    [stars]="props?.stars ?? 5"
+    [cancel]="props?.cancel ?? true"
+    [iconOnClass]="props?.iconOnClass ?? null"
+    [iconOnStyle]="props?.iconOnStyle ?? null"
+    [iconOffClass]="props?.iconOffClass ?? null"
+    [iconOffStyle]="props?.iconOffStyle ?? null"
+    [iconCancelClass]="props?.iconCancelClass ?? null"
+    [iconCancelStyle]="props?.iconCancelStyle ?? null"
+    [autofocus]="props?.autofocus ?? false"
+    [required]="props?.required ?? false"
+    (onRate)="props?.onRate?.(this, $event)"
+    (onCancel)="props?.onCancel?.(this, $event)"
+    (onFocus)="props?.onFocus?.(this, $event)"
+    (onBlur)="props?.onBlur?.(this, $event)"
+  >
+    <ng-template *ngIf="props?.onIconTemplate" pTemplate="onicon">
+      <ng-container *ngTemplateOutlet="props.onIconTemplate"></ng-container>
+    </ng-template>
+
+    <ng-template *ngIf="props?.offIconTemplate" pTemplate="officon">
+      <ng-container *ngTemplateOutlet="props.offIconTemplate"></ng-container>
+    </ng-template>
+
+    <ng-template *ngIf="props?.cancelIconTemplate" pTemplate="cancelicon">
+      <ng-container *ngTemplateOutlet="props.cancelIconTemplate"></ng-container>
+    </ng-template>
+  </p-rating>
+</div>
